@@ -1,9 +1,10 @@
 import express from "express";
-import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
+import connectDB from "./Models/db.js";
 
 dotenv.config();
+connectDB();
 
 const app = express();
 
@@ -16,11 +17,6 @@ app.get("/", (req, res) => {
   res.send("LaganiLens API is running 🚀");
 });
 
-// MongoDB connection
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDB connected"))
-  .catch((err) => console.error("MongoDB error:", err));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () =>
