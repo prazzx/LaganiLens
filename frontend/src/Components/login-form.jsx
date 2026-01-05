@@ -79,7 +79,7 @@ export function LoginForm({
           <div className="relative hidden bg-muted md:block">
             <img
               src={hero2}
-              alt="Image"
+              alt="Imklmlkage"
               className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale" />
           </div>
         </CardContent>
