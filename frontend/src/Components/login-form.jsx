@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import hero2 from "../Assets/hero2.png"
+import hero2 from "../Assets/logo.jpg"
 export function LoginForm({
   className,
   ...props
@@ -80,7 +80,7 @@ export function LoginForm({
             <img
               src={hero2}
               alt="Imklmlkage"
-              className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale" />
+              className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.8] dark:grayscale" />
           </div>
         </CardContent>
       </Card>
