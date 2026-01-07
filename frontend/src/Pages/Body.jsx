@@ -1,185 +1,196 @@
-import hero from '../Assets/hero.png'
-import hero2 from '../Assets/hero2.png'
-import { useNavigate } from 'react-router'
-export default function Body(){
-    const navigate=useNavigate();
+import hero from "../Assets/hero.png"
+import hero2 from "../Assets/hero2.png"
+import { useNavigate } from "react-router-dom"
 
-    const handlebutton = () =>{
-        navigate('/signup')
-    }
-    return(
-        <>
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 overflow-hidden min-h-screen"> 
-            {/* Animated background elements */}
-            <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-            <div className="absolute top-20 left-10 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float"></div>
-            <div className="absolute top-40 right-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" style={{animationDelay: '2s'}}></div>
-            <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" style={{animationDelay: '4s'}}></div>
-            
-            <div className='max-w-7xl flex flex-col md:flex-row items-center min-h-screen px-4 sm:px-6 lg:px-8 py-12 md:py-0 justify-between mx-auto gap-8 relative z-10'>  
-                {/* Text Content */}
-                <div className='flex-1 space-y-6 md:space-y-8 animate-slide-in-left'>
-                    <div className="inline-block mb-4">
-                        <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent text-sm font-semibold uppercase tracking-wider">
-                            Academic AI/ML Project
-                        </span>
-                    </div>
-                    <h1 className='font-bold text-4xl md:text-5xl lg:text-6xl text-gray-900 leading-tight'>
-                        LaganiLens: AI-Powered <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent animate-pulse">NEPSE Market Analysis</span>
-                    </h1>
-                    <p className='text-gray-700 text-lg md:text-xl leading-relaxed max-w-2xl'>
-                        An academic AI/ML project focused on acquiring historical NEPSE (Nepal Stock Exchange) data, preprocessing it, and applying machine learning techniques to analyze trends and make predictions.
-                    </p>
-                    <p className='text-gray-600 text-base md:text-lg leading-relaxed max-w-2xl'>
-                        Explore the end-to-end pipeline of a real-world data science project with Nepali stock market data.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                        <button 
-                            onClick={handlebutton} 
-                            className="group relative bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold text-lg overflow-hidden transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105"
-                        >
-                            <span className="relative z-10 flex items-center gap-2">
-                                Get Started Now 
-                                <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                                </svg>
-                            </span>
-                            <div className="absolute inset-0 shimmer"></div>
-                        </button>
-                        <button 
-                            onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
-                            className="group bg-white text-gray-700 px-8 py-4 rounded-xl font-semibold text-lg border-2 border-gray-200 hover:border-blue-600 transition-all duration-300 shadow-md hover:shadow-lg"
-                        >
-                            Learn More
-                        </button>
-                    </div>
-                </div>
-                {/* Hero Image */}
-                <div className="flex-1 flex justify-center items-center animate-slide-in-right">
-                    <div className="relative">
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-3xl blur-3xl opacity-30 animate-pulse-glow"></div>
-                        <img 
-                            src={hero} 
-                            alt='hero image' 
-                            className='relative max-w-full h-auto max-h-[500px] md:max-h-[600px] object-contain drop-shadow-2xl transform hover:scale-105 transition-transform duration-500' 
-                        />
-                    </div>
-                </div>
-            </div>
-        </section>
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Separator } from "@/components/ui/separator"
 
-        {/* Features Section */}
-        <section className='bg-gradient-to-b from-white to-gray-50 py-20 md:py-32 relative overflow-hidden'>
-            <div className="absolute inset-0 bg-grid-pattern opacity-3"></div>
-            <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10'>
-                <div className='text-center mb-16'>
-                    <h2 className='text-4xl md:text-5xl font-bold text-gray-900 mb-4'>
-                        Project <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Objectives</span>
-                    </h2>
-                    <p className='text-gray-600 text-lg max-w-2xl mx-auto'>
-                        Comprehensive learning objectives for mastering data science with NEPSE market data
-                    </p>
-                </div>
-                
-                <div className='grid md:grid-cols-2 gap-12 items-center'>
-                    {/* Image */}
-                    <div className='order-2 md:order-1 animate-fade-in'>
-                        <div className="relative group">
-                            <div className="absolute -inset-4 bg-gradient-to-r from-blue-400 to-purple-400 rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity"></div>
-                            <img 
-                                src={hero2} 
-                                className='relative max-w-full h-auto rounded-2xl shadow-2xl transform group-hover:scale-105 transition-transform duration-500' 
-                                alt="NEPSE Data Analysis"
-                            />
-                        </div>
-                    </div>
-                    
-                    {/* Features Card */}
-                    <div className='order-1 md:order-2 space-y-6'>
-                        <div className='bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:border-blue-200'>
-                            <div className="flex items-start gap-4">
-                                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-xl group-hover:scale-110 transition-transform">
-                                    📊
-                                </div>
-                                <div className="flex-1">
-                                    <h3 className='font-bold text-xl text-gray-900 mb-2 group-hover:text-blue-600 transition-colors'>
-                                        Data Acquisition
-                                    </h3>
-                                    <p className='text-gray-600 leading-relaxed'>
-                                        Learn web scraping and API-based data acquisition for historical NEPSE stock market data.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div className='bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:border-blue-200'>
-                            <div className="flex items-start gap-4">
-                                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center text-white text-xl group-hover:scale-110 transition-transform">
-                                    💾
-                                </div>
-                                <div className="flex-1">
-                                    <h3 className='font-bold text-xl text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors'>
-                                        Data Management
-                                    </h3>
-                                    <p className='text-gray-600 leading-relaxed'>
-                                        Store and manage historical NEPSE stock market data efficiently for analysis and modeling.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div className='bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:border-blue-200'>
-                            <div className="flex items-start gap-4">
-                                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center text-white text-xl group-hover:scale-110 transition-transform">
-                                    🔍
-                                </div>
-                                <div className="flex-1">
-                                    <h3 className='font-bold text-xl text-gray-900 mb-2 group-hover:text-purple-600 transition-colors'>
-                                        Data Preprocessing & EDA
-                                    </h3>
-                                    <p className='text-gray-600 leading-relaxed'>
-                                        Perform comprehensive data cleaning, preprocessing, and exploratory data analysis to understand market patterns.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div className='bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:border-blue-200'>
-                            <div className="flex items-start gap-4">
-                                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center text-white text-xl group-hover:scale-110 transition-transform">
-                                    🤖
-                                </div>
-                                <div className="flex-1">
-                                    <h3 className='font-bold text-xl text-gray-900 mb-2 group-hover:text-pink-600 transition-colors'>
-                                        Machine Learning Models
-                                    </h3>
-                                    <p className='text-gray-600 leading-relaxed'>
-                                        Apply advanced ML techniques for trend analysis and price prediction on NEPSE market data.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div className='bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:border-blue-200'>
-                            <div className="flex items-start gap-4">
-                                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center text-white text-xl group-hover:scale-110 transition-transform">
-                                    ⚠️
-                                </div>
-                                <div className="flex-1">
-                                    <h3 className='font-bold text-xl text-gray-900 mb-2 group-hover:text-amber-600 transition-colors'>
-                                        Understanding Limitations
-                                    </h3>
-                                    <p className='text-gray-600 leading-relaxed'>
-                                        Explore the challenges and limitations of predicting stock markets, especially in the context of NEPSE.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+import {
+  LineChart,
+  Database,
+  Brain,
+  Search,
+  AlertTriangle,
+  ArrowRight,
+} from "lucide-react"
+
+export default function Body() {
+  const navigate = useNavigate()
+
+  return (
+    <>
+      {/* ================= HERO ================= */}
+<section className="min-h-[calc(100vh-4rem)] -mt-2">
+
+        <div className=" pt-3 mx-auto max-w-7xl px-6 py-24 grid lg:grid-cols-2 gap-16 items-center">
+          
+          {/* Left */}
+          <div className="space-y-8">
+            <Badge variant="secondary" className="w-fit">
+              Academic AI / ML Project
+            </Badge>
+
+            <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold tracking-tight">
+              LaganiLens <br />
+              <span className="text-primary">
+                NEPSE Market Intelligence
+              </span>
+            </h1>
+
+            <p className="text-muted-foreground text-lg max-w-xl">
+              An end-to-end AI/ML project that collects, cleans, analyzes and
+              predicts trends from Nepal Stock Exchange (NEPSE) data.
+            </p>
+
+            <div className="flex gap-4">
+              <Button size="lg" onClick={() => navigate("/signup")}>
+                Get Started
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={() =>
+                  document
+                    .getElementById("features")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                Learn More
+              </Button>
             </div>
-        </section>
-        </>
-    )
+
+            {/* Stats */}
+            <div className="flex gap-10 pt-6">
+              <div>
+                <p className="text-3xl font-bold">3+ yrs</p>
+                <p className="text-sm text-muted-foreground">Market Data</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold">ML</p>
+                <p className="text-sm text-muted-foreground">Driven Analysis</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold">NEPSE</p>
+                <p className="text-sm text-muted-foreground">Focused</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right */}
+          <div className="relative">
+            <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-tr from-primary/20 to-purple-500/20 blur-3xl" />
+            <img
+              src={hero}
+              alt="LaganiLens Dashboard"
+              className="rounded-2xl shadow-2xl border"
+            />
+          </div>
+        </div>
+      </section>
+
+      <Separator />
+
+      {/* ================= FEATURES ================= */}
+      <section id="features" className="py-24 bg-muted/40">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-4xl font-bold">
+              What You’ll Learn
+            </h2>
+            <p className="text-muted-foreground mt-4">
+              A complete real-world data science pipeline using Nepali stock
+              market data.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <FeatureCard
+              icon={<Database />}
+              title="Data Acquisition"
+              desc="Scrape and collect historical NEPSE data using real-world techniques."
+            />
+
+            <FeatureCard
+              icon={<Search />}
+              title="EDA & Cleaning"
+              desc="Understand trends, remove noise, and prepare stock data for modeling."
+            />
+
+            <FeatureCard
+              icon={<LineChart />}
+              title="Market Analysis"
+              desc="Visualize movements, patterns, and volatility in NEPSE stocks."
+            />
+
+            <FeatureCard
+              icon={<Brain />}
+              title="Machine Learning"
+              desc="Apply ML models to forecast trends and evaluate predictions."
+            />
+
+            <FeatureCard
+              icon={<AlertTriangle />}
+              title="Limitations"
+              desc="Understand why stock prediction is hard—especially in emerging markets."
+            />
+
+            <FeatureCard
+              icon={<LineChart />}
+              title="Academic Ready"
+              desc="Perfectly structured for final-year projects and evaluations."
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ================= IMAGE + STORY ================= */}
+      <section className="py-24">
+        <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-16 items-center">
+          <img
+            src={hero2}
+            alt="NEPSE Analysis"
+            className="rounded-2xl shadow-xl border"
+          />
+
+          <div className="space-y-6">
+            <Badge>Why LaganiLens?</Badge>
+
+            <h3 className="text-3xl font-bold">
+              Built for Nepal. Built for Learning.
+            </h3>
+
+            <p className="text-muted-foreground text-lg">
+              Most stock-market ML projects focus on US or EU markets.
+              LaganiLens is designed specifically around NEPSE—its structure,
+              volatility, and data limitations.
+            </p>
+
+            <Button variant="outline" onClick={() => navigate("/signup")}>
+              Start Exploring
+            </Button>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}
+
+function FeatureCard({ icon, title, desc }) {
+  return (
+    <Card className="hover:shadow-lg transition">
+      <CardHeader className="flex flex-row items-center gap-4">
+        <div className="p-3 rounded-xl bg-primary/10 text-primary">
+          {icon}
+        </div>
+        <CardTitle>{title}</CardTitle>
+      </CardHeader>
+      <CardContent className="text-muted-foreground">
+        {desc}
+      </CardContent>
+    </Card>
+  )
 }
